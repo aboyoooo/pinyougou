@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.1.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.hlkj</groupId>
+    <artifactId>shopping-online</artifactId>
+    <version>1.0</version>
+    <name>shopping-online</name>
+    <packaging>pom</packaging>
+    <description>Demo project for Spring Boot</description>
+    <modules>
+        <module>register-center</module>
+
+        <module>cart-service-1</module>
+        <module>pojo</module>
+        <module>cart-web-feign</module>
+        <module>cart-web-ribbon</module>
+        <module>item-web</module>
+        <module>order-service</module>
+        <module>order-web</module>
+        <module>search-service</module>
+        <module>search-web</module>
+        <module>shop-web</module>
+        <module>content-service</module>
+        <module>portal-web</module>
+        <module>user-service</module>
+        <module>user-web</module>
+        <module>common</module>
+        <module>manager-web</module>
+        <module>manager-service</module>
+        <module>security-center</module>
+        <module>sellgoods-service</module>
+        <module>goods-web-feign</module>
+    </modules>
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Hoxton.SR5</spring-cloud.version>
+        <mybatis.version>1.3.2</mybatis.version>
+        <pageHelper.version>1.2.10</pageHelper.version>
+        <druid.verson>1.1.10</druid.verson>
+        <commons-fileupload.version>1.4</commons-fileupload.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

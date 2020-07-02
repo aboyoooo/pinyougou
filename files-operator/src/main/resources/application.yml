@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: files-operator
+  # 上传文件的最大的大小
+  http:
+    multipart:
+      max-file-size: 10000000
+  ####整合数据库层
+  datasource:
+    name: test
+    url: jdbc:mysql://192.168.80.101:3306/nc2017
+    username: root
+    password: 123456
+    # druid 连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+server:
+  port: 0
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.int}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+fdfs:
+  # 连接Tracker服务器超时时间
+  connect-timeout: 10000
+  # storage服务器响应的超时时间
+  so-timeout: 3000
+  #trakcer服务器的数量
+  tracker-list:
+    - 192.168.80.101:22122

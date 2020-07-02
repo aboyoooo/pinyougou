@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: portal-web
+  resources:
+    static-locations: classpath:/static/, classpath:/templates/
+  main:
+    allow-bean-definition-overriding: true
+#multipart:
+#  enabled: true
+server:
+  port: 9002
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.int}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
